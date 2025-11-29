@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SPARK Event Registration</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+html,body{height:100%;margin:0;padding:0;}
+body{
+font-family: Arial, sans-serif;
+background:#0b0b16;
+color:white;
+overflow-x:hidden;
+}
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  display:block;
+}
+h1{
+  text-align:center;
+  font-size:48px;
+  margin-top:40px;
+}
+h2{
+  text-align:center;
+  font-size:26px;
+  margin-top:-10px;
+  color:#ffb86b;
+ }
+.spark-desc{
+  text-align:center;
+  max-width:780px;
+  margin:20px auto 10px;
+  font-size:18px;
+  line-height:28px;
+  color:#d9d9ff;
+}
+.container{
+  width:70%;
+  max-width:1100px;
+  margin:40px auto 120px;
+  background:#1a1a2ebb;
+  padding:40px;
+  border-radius:14px;
+  backdrop-filter:blur(5px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+.section-title{
+  font-size:30px;
+  font-weight:800;
+  text-align:center;
+  color:#ffde9e;
+  background:#0f0f1d;
+  padding:14px 28px;
+  border-radius:12px;
+  width:max-content;
+  margin:0 auto 25px;
+  box-shadow:0 6px 20px rgba(255,222,158,0.12);
+}
+.schedule-block{ margin-bottom:30px; }
+.time-line{
+  font-size:20px;
+  font-weight:bold;
+  color:#ffd8a6;
+  margin-bottom:10px;
+}
+.bullet-box{
+  margin-left:25px;
+  margin-top:5px;
+}
+.bullet-box li{
+  margin:6px 0;
+  font-size:18px;
+  color:#e7f6ff;
+}
+hr{
+  border:0;
+  border-top:1px solid #ffffff20;
+  margin:30px 0;
+}
+form{
+  margin-top:20px;
+  font-size:18px;
+}
+label{
+  display:block;
+  margin-top:8px;
+  font-weight:600;
+}
+  input[type="text"],
+  input[type="email"],
+  select{
+    width:100%;
+    padding:12px;
+    margin:8px 0 16px 0;
+    border-radius:8px;
+    border:none;
+    background:white;
+    color:black;
+    font-size:17px;
+  }
+  .events-checklist{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:10px;
+    margin:8px 0 18px 0;
+  }
+  .event-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(255,255,255,0.08);
+    padding:10px 12px;
+    border-radius:8px;
+  }
+  input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    accent-color:#ffb86b;
+  }
+
+  button{
+    width:100%;
+    padding:14px;
+    background:#ffb86b;
+    color:black;
+    font-size:20px;
+    font-weight:bold;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:10px;
+  }
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<h1>✨ SPARK 2026 ✨</h1>
+<h2>Event Registration</h2>
+<div class="spark-desc">
+  College’s most vibrant annual event, bringing together talent, creativity,
+  and innovation across all departments. Participate, compete, and showcase your skills at SPARK!
+</div>
+<div class="container">
+  <div class="section-title">Schedule</div>
+  <div class="schedule">
+    <div class="schedule-block">
+      <div class="time-line">09:00 AM : Event Starts</div>
+    </div>
+    <div class="schedule-block">
+      <div class="time-line">10:00 AM to 12:00 PM : Technical Events</div>
+      <ul class="bullet-box">
+        <li>Debugging</li>
+        <li>Front-end Development</li>
+        <li>Poster Making</li>
+        <li>Design a Webpage (UI/UX)</li>
+      </ul>
+    </div>
+    <div class="schedule-block">
+      <div class="time-line">12:30 PM to 01:30 PM : Lunch Break</div>
+    </div>
+    <div class="schedule-block">
+      <div class="time-line">02:00 PM to 04:00 PM : Non-Technical Events</div>
+      <ul class="bullet-box">
+        <li>Connections</li>
+        <li>Find the Logo</li>
+        <li>Just a Minute</li>
+        <li>Stack the Cup</li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="section-title" style="font-size:24px;">Register Now</div>
+  <form id="regForm">
+    <label>Full Name</label>
+    <input type="text" id="name" required>
+    <label>Email ID</label>
+    <input type="email" id="email" required>
+    <label>Department</label>
+    <select id="dept" required>
+      <option value="">Select Department</option>
+      <option>CSE</option>
+      <option>CSD</option>
+      <option>AIML</option>
+      <option>IT</option>
+      <option>ADS</option>
+      <option>ECE</option>
+      <option>EEE</option>
+    </select>
+    <label>Role</label>
+    <select id="role" required>
+      <option value="">Select</option>
+      <option>Student</option>
+      <option>Teacher</option>
+      <option>Guest</option>
+    </select>
+    <label>Select Events (Checklist)</label>
+    <div class="events-checklist">
+      <div class="event-item"><input type="checkbox" name="events"> Debugging</div>
+      <div class="event-item"><input type="checkbox" name="events"> Front-end Development</div>
+      <div class="event-item"><input type="checkbox" name="events"> Poster Making</div>
+      <div class="event-item"><input type="checkbox" name="events"> Design a Webpage (UI/UX)</div>
+      <div class="event-item"><input type="checkbox" name="events"> Connections</div>
+      <div class="event-item"><input type="checkbox" name="events"> Find the Logo</div>
+      <div class="event-item"><input type="checkbox" name="events"> Just a Minute</div>
+      <div class="event-item"><input type="checkbox" name="events"> Stack the Cup</div>
+    </div>
+    <button type="submit">Submit Registration</button>
+  </form>
+</div>
+<script>
+const c = document.getElementById('bg');
+const ctx = c.getContext('2d');
+function resize(){ c.width = innerWidth; c.height = innerHeight; }
+resize();
+window.onresize = resize;
+let dots=[];
+for(let i=0;i<60;i++){
+  dots.push({
+    x:Math.random()*c.width,
+    y:Math.random()*c.height,
+    r:2+Math.random()*5,
+    dx:0.3+Math.random()*0.5,
+    dy:0.3-Math.random()*0.5,
+    a:0.06+Math.random()*0.14
+  });
+}
+function draw(){
+  ctx.clearRect(0,0,c.width,c.height);
+  dots.forEach(d=>{
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255,255,255,${d.a})`;
+    ctx.arc(d.x,d.y,d.r,0,Math.PI*2);
+    ctx.fill();
+    d.x += d.dx;
+    d.y += d.dy;
+    if(d.x > c.width) d.x = 0;
+    if(d.y > c.height) d.y = 0;
+    if(d.y < 0) d.y = c.height;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+document.getElementById("regForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const checked = document.querySelectorAll('input[name="events"]:checked');
+  if(checked.length === 0){
+    alert("Please select at least one event.");
+    return;
+  }
+  window.location.href = "success.html";
+});
+</script>
+</body>
+</html>
