@@ -23,19 +23,18 @@
 
 👉 **[https://shamira2102.github.io/SPARK-Frontend-Development/](https://shamira2102.github.io/SPARK-Frontend-Development/)**
 
----
 
 ## ✨ Features
 
 | Feature | Description |
-| 🎆 **Animated Canvas Background** | Dynamic, eye-catching visuals powered by the HTML5 Canvas API |
-| 📅 **Event Schedule** | Clear, easy-to-read timeline of all SPARK 2026 events |
-| 📝 **Registration Form** | Interactive form for participant sign-up |
-| 🏫 **Department Selection** | Choose your department from a dropdown |
-| 🎭 **Role Selection** | Pick your participation role |
-| ✅ **Event Checklist** | Select the events you want to join |
-| 🛡️ **Form Validation** | Real-time validation to prevent incorrect or incomplete submissions |
-| 📱 **Responsive Design** | Works across mobile, tablet, and desktop screens |
+🎆 **Animated Canvas Background** | Dynamic, eye-catching visuals powered by the HTML5 Canvas API |
+📅 **Event Schedule** | Clear, easy-to-read timeline of all SPARK 2026 events |
+📝 **Registration Form** | Interactive form for participant sign-up |
+🏫 **Department Selection** | Choose your department from a dropdown |
+🎭 **Role Selection** | Pick your participation role |
+✅ **Event Checklist** | Select the events you want to join |
+🛡️ **Form Validation** | Real-time validation to prevent incorrect or incomplete submissions |
+📱 **Responsive Design** | Works across mobile, tablet, and desktop screens |
 
 ---
 
